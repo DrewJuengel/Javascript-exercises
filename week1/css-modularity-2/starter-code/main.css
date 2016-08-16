@@ -1,0 +1,57 @@
+/*Question 6*/
+
+.center {
+    text-align: center;
+}
+
+.center img {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/**/
+
+.center2 img {
+    vertical-align: top
+}
+
+.center3 {
+    float: right;
+    vertical-align: top
+}
+
+.Finish {
+    width: auto;
+}
+
+
+/*Question 7*/
+
+.vert {
+    height: auto;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    vertical-align: center;
+}
+
+/**/
+
+.vert2 {
+    vertical-align: center;
+    padding-bottom: 90px;
+    padding-top: 90px;
+}
+
+
+/*Question 8*/
+
+.NoMansSky ul li {
+    display: inline;
+}
+
+
+/*Question 9*/
+
+.Water href {
+
+}
