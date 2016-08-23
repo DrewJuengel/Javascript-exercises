@@ -1,1 +1,2 @@
-angular.module(introAngular)
+angular.module("introAngular", [])
+.controller("hotButton", hotController)
