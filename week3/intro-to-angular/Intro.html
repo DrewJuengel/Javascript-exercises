@@ -3,11 +3,10 @@
         <title>Intro to Angular!</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
         <script src="Intro.js"></script></script>
+        
     </head>
-    <body>
-        <div ng-controller="hotButton as hot">
-            <button ng-click="hot">Click Me!</button>
-        </div>
-
+    <body ng-controller="MyController as my">
+        <button ng-click="my.showH1()">Click Me</button>
+        <h1 ng-show="my.isShowingH1">Hello</h1>
     </body>
 </html>
