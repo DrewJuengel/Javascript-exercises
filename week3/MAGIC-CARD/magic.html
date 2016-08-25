@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="Magic">
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="magic.js"></script>
+    </head>
+    <body>
+
+        <section ng-controller="theGathering">
+            
+            <form ng-sumbit="gMagic.addCard()">
+                <h1>
+                    Create New Card
+                </h1>
+                <hr>
+                
+                <input type="text" placeholder="Name" ng-model="mCtrl.newCard.name" />
+                <input type="text" placeholder="Mana Color" ng-model="mCtrl.newCard.manaColor" />
+                <input type="number" placeholder="Power" ng-model="mCtrl.newCard.power" />
+                <input type="number" placeholder="Toughness" ng-model="mCtrl.newCard.toughness" />
+                <input type="text" placeholder="Art" ng-model="mCtrl.newCard.art" />
+                <button type="sumbit">Add new card</button>
+
+            </form>
+
+        </section>
+
+        <section ng-controller="theMagic"></section>
+            <ul>
+                
+
+            </ul>
+        </section>
+        
+    </body>
+</html>
