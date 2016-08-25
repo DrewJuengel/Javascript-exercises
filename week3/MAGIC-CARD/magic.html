@@ -23,13 +23,18 @@
 
             </form>
 
+            <section id="magicGallery">
+                    <div class="gatheringGallery" ng-repeat="magic in mCtrl.Card">
+                        <h3> {{ magic.name }} </h3>
+
+                    </div>
+
+            </section>
+
         </section>
 
-        <section ng-controller="theMagic"></section>
-            <ul>
-                
-
-            </ul>
+        <section ng-controller="theMagic">
+            
         </section>
         
     </body>
