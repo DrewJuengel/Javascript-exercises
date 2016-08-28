@@ -6,7 +6,7 @@
     </head>
     <body>
 
-        <section ng-controller="theGathering">
+        <section ng-controller="magicForm">
             
             <form ng-sumbit="gMagic.addCard()">
                 <h1>
@@ -23,17 +23,10 @@
 
             </form>
 
-            <section id="magicGallery">
-                    <div class="gatheringGallery" ng-repeat="magic in mCtrl.Card">
-                        <h3> {{ magic.name }} </h3>
-
-                    </div>
-
-            </section>
-
         </section>
 
-        <section ng-controller="theMagic">
+        
+        <section ng-controller="theMagic as ">
             
         </section>
         

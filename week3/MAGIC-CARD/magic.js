@@ -1,12 +1,12 @@
 angular.module("Magic", [])
-    .controller("theGathering", gatherController)
+    .controller("magicForm", formController)
     .controller("theMagic", magicController)
     .factory("magicData", magicFactory)
 
-function gatherController(){
+function formController(){
     console.info("Testy test")
 
-    var gCtrl = this
+    var fCtrl = this
 
     gCtrl.Card = [{
         name: '',
