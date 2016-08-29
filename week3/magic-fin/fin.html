@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="magicCards">
+    <head>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+        <script src="fin.js"></script>
+        <style>
+            .magicDiv {
+                background-color: brown;
+                border: 4px solid black;
+                border-radius: .5em;
+                height: 260px;
+                padding: 5px;
+                width:  180px;
+                box-sizing: border-box;
+                margin: 20px;
+                float: left;
+            }
+            h3 {
+                margin: 0 0 10px 0;
+            }
+            .image {
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body ng-controller="inputController as mCtrl">
+        <section class="section1" ng-controller="inputController as mCtrl">
+        <form ng-submit="mCtrl.addCard()">
+            <h1>Create a Magic Card!</h1>
+            <hr><!-- horizontal rule, an old-school separator -->
+            <input type="text" placeholder="Name": ng-model="mCtrl.newCard.name"/>
+            <input type="text" placeholder="Image URL": ng-model="mCtrl.newCard.picture" ng-list/>
+            <input type="text" placeholder="manaColor": ng-model="mCtrl.newCard.manaColor" ng-list/>
+            <input type="number" placeholder="Power": ng-model="mCtrl.newCard.power"/>
+            <input type="number" placeholder="Toughness" ng-model="mCtrl.newCard.toughness"/>
+            <button type="submit">Create Card!</button>
+        </form>
+        </section>
+        
+        <hr>
+        
+            <section id="magicId" ng-controller="galleryController as gCtrl">
+            <div class="magicDiv" ng-repeat="card in gCtrl.cards">
+                
+                <h3 class="name">{{ card.name }}</h3>
+                <img class="image"  ng-src="{{card.picture}}">
+                <h4 class = "text"> Mana: {{card.manaColor}}</h4>
+                <h4 class = "number"> Power: {{card.power}}</h4>
+                <h4 class = "number"> Toughness: {{card.toughness}}</h4>
+                
+
+            </div>
+        </section>
+    </body>
+</html>

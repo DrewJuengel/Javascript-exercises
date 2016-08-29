@@ -1,0 +1,18 @@
+.GareBear {
+    max-width: 220px;
+    border-width: 5px;
+    border-color: black;
+}
+
+.GareBear img {
+    max-width: 200px;
+}
+
+#name {
+    font-weight: bold;
+}
+
+#age {
+    font-style: italic;
+    
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="magicCards">
+   <head>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+       <link href="copy.css" rel="stylesheet" />
+       <script src="copy.js"> </script>
+       <title>Cards</title>
+   </head>
+
+   <body class="container2">
+       <section class="well" ng-controller="magicForm as mCtrl">
+           <h2 class="text-center">Add a card</h2>
+           <form class="text-center" ng-submit="mCtrl.addCards()">
+               <input type="text"  placeholder="name" ng-model="mCtrl.newCard.name">
+               <input type="text"  placeholder="Super Power" ng-model="mCtrl.newCard.superPower">
+               <input type="number"  placeholder="power" ng-model="mCtrl.newCard.power">
+               <input type="number"  placeholder="toughness" ng-model="mCtrl.newCard.toughness">
+               <input type="text"  placeholder="art" ng-model="mCtrl.newCard.art">
+               <button type="submit">Add Card</button>
+           </form>
+       </section>
+
+       <hr>
+
+       <section ng-controller="magicGallery as gCtrl" >
+           <h2 class="text-center shimmer"> Our Gallery of Cards </h2>
+           <input class="search" placeholder="Find Your Card" ng-model="gCtrl.cardFilter">
+           <br>
+           <div class="card myrtle" ng-repeat="card in gCtrl.cards | filter:gCtrl.cardFilter">
+               <div class ="shimmer">
+                   <h3 class="name">{{card.name}}</h3>
+                   <img class="image" ng-src="{{card.art}}"/>
+                   <h4 class="text"> Super Power: {{card.superPower}} </h4>
+                   <h4 class="text">Toughness: {{card.toughness}} </h4>
+                   <h4 class="text">Power: {{card.power}}</h4>
+               </div>
+           </div>
+       </section>
+   </body>
+</html>
