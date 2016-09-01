@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app='DirtyDoppler'>
+    <head>
+        <title>The Dirty Doppler</title>
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src= "dirty.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="dirty.css">
+    </head>
+    <body ng-controller="DirtyController as dCtrl" class="container">
+        <div class="jumbotron">
+            <h1>{{dCtrl.greeting}}</h1>
+            <form ng-submit="dCtrl.getCity()">
+                <input type="text" placeholder="city" ng-model="dCtrl.city">
+                <button type="submit">Touch It</button>
+            </form>
+       
+         </div>
+        <div class="result">
+                <h1>{{dCtrl.dirtyPhrase}}</h1>
+                <img ng-src="{{dCtrl.icon}}" />
+                <h4>{{dCtrl.temperature}}</h4>
+                <p>{{dCtrl.tDescript}}</p>
+                
+        
+        </div>  
+
+
+    </body>
+</html>
