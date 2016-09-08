@@ -6,13 +6,12 @@ angular.module('LyricFinder', [])
 tController.$inject=['$sce', 'mFactory'];
 musicFactory.$inject=['$http'];
 
+    // START OF 1ST CONTROLLER
+
 function tController($sce, mFactory){
     var tCtrl = this;
     tCtrl.$sce = $sce;
 
-    // console.log(mFactory.name);
-
-    tCtrl.greeting = "this is a test";
 
      function success(res) {
             tCtrl.songList = res.data; 
@@ -28,16 +27,32 @@ function tController($sce, mFactory){
         var result = mFactory.getSongs(tCtrl.search);
         result.then(success, error);
 
-        }
+        // function validator() {
+        //     var searchBox =  
+        //     if (searchBox == null){
+        //         alert("Your search is blank")
+        //     }
+        // } 
     }
+}
 
-    
 
+
+    // END OF 1ST CONTROLLER
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+    // START OF 2ND CONTROLLER
 
 function pController($http){
     var pCtrl = this
 }
 
+    // END OF 2ND CONTROLLER
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+    // START OF FACTORY
 
 function musicFactory($http){
 
@@ -60,3 +75,5 @@ function musicFactory($http){
    
     return factoryObj;
 }
+
+// END OF FACTORY
