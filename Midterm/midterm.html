@@ -1,9 +1,35 @@
 <!DOCTYPE html>
-<html ng-app='Tweeter'>
+<html ng-app='LyricFinder'>
     <head>
-        
+        <title>LyricFinder</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="midterm.js"></script>
+        <link rel="stylesheet" type="text/css" href="midterm.css">
     </head>
-    <body ng-controller='tweetController as tCtrl'>
+    <body>
+
+        <section ng-controller='searchController as tCtrl'>
+            <h1>{{ tCtrl.greeting }}</h1>
+
+            <form ng-submit="tCtrl.getLyrics()">
+                <input type="text" placeholder="Search Lyrics Here" ng-model="tCtrl.search">
+                <button type="submit">Lyrics</button>
+            </form>
+           
+            <ul>
+                <li ng-repeat="song in tCtrl.songList.message.body.track_list" ng-if="song.track.track_spotify_id">
+                     
+                         <iframe ng-src="{{tCtrl.$sce.trustAsResourceUrl('https://embed.spotify.com/?uri=spotify:track:'+song.track.track_spotify_id)}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+                       
+                </li>
+            </ul>
+        </section>
+
+        <section ng-controller='playController as pCtrl'>
+
+            
+        
+        </section>
 
     </body>
 </html>
