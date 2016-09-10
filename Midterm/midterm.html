@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='LyricFinder'>
     <head>
-        <title>LyricFinder</title>
+        <title>Lyric Finder</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
         <script src="midterm.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
@@ -9,21 +9,46 @@
         <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     </head>
     <body>
-        <section ng-controller='searchController as tCtrl' class="jumbotron">
-            <h1>Lyric Finder</h1>
 
-            <form ng-submit="tCtrl.getLyrics()">
-                <input type="text" placeholder="Search Lyrics Here" ng-model="tCtrl.search">
-                <button type="submit" class>Lyrics</button>
-            </form>
-           
-            <ul style="list-style: none">
-                <li ng-repeat="song in tCtrl.songList.message.body.track_list" ng-if="song.track.track_spotify_id">
-                     
-                         <iframe ng-src="{{tCtrl.$sce.trustAsResourceUrl('https://embed.spotify.com/?uri=spotify:track:'+song.track.track_spotify_id)}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>     
-                </li>
-            </ul>
-        </section>
+
+        <!-----------------JUMBOTRON----------------->
+        <div  ng-controller='searchController as tCtrl'>
+            
+            <header>
+                <section class="jumbotron">
+                    <h1>Lyric Finder</h1>
+
+                    <p>Find the lyrics to the song that the girl from <br> high school captioned her selfie with!™</p>
+                </section>
+            </header>
+        <!-----------------JUMBOTRON----------------->
+    
+
+        <!------------------SEARCH BAR + SEARCH RESULTS-------------------------->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="centerButton" ng-submit="tCtrl.getLyrics()">
+                        <input class="form-group" type="text" placeholder="Search Lyrics Here" ng-model="tCtrl.search">
+                        <button type="submit" class="btn-primary">Get Lyrics</button>
+                    </form>
+                            <!--RESULTS-->
+                        <div class="container">
+
+                            <ul class="list" style="list-style: none">
+                                <li class="songRow" ng-repeat="song in tCtrl.songList" ng-if="song.track.track_spotify_id">
+                                
+                                <iframe ng-src="{{tCtrl.$sce.trustAsResourceUrl('https://embed.spotify.com/?uri=spotify:track:'+song.track.track_spotify_id)}}" width="300" height="80" frameborder="0" allowtransparency="false"></iframe>     
+
+                                </li>
+                            </ul>
+                        </div>
+                            <!--RESULTS-->
+                </div>
+            </div>
+        <!------------------SEARCH BAR + SEARCH RESULTS-------------------------->
+
+
+        </div>
 
         
         <section ng-controller='playController as pCtrl'>
@@ -33,4 +58,5 @@
         </section>
 
     </body>
+
 </html>

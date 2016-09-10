@@ -1,22 +1,31 @@
 .jumbotron {
     padding-left: 30px;
+    padding-right: 30px;
     margin-left: 150px;
     margin-right: 150px;
-    opacity: .75;
-    /*background: rgba(0,0,0,0.75);*/
+    border-radius: 0px 0px 20px 20px;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-color: black;
+    background-color: rgba(255, 255, 255, .75)
 
 }
 
 .jumbotron h1 {
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Shadows Into Light';
     font-size: 130px;
     text-align: center;
+    padding-bottom: 35px;
+    padding-top: 0px;
+    margin-top: -25px;
 }
 
 body {
     background-image: url(https://helenaustin.files.wordpress.com/2011/02/img_0378.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 html {
@@ -26,4 +35,52 @@ html {
 .jumbotron form {
     text-align: center;
     padding: 40px;
+}
+
+.jumbotron p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: -10px;
+}
+
+.panel {
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 20px 20px 20px 20px;
+    border-left-style:  solid;
+    border-right-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: black;
+    background-color: rgba(255, 255, 255, .75);
+    border-width: 3px;
+}
+
+.panel-body{
+    width: 100%;
+}
+
+.container{
+    width: 100%;
+}
+
+.songRow {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+}
+
+.list{
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+}
+
+.centerButton {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    font-size: 20px;
 }

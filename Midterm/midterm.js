@@ -12,27 +12,29 @@ function tController($sce, mFactory){
     var tCtrl = this;
     tCtrl.$sce = $sce;
 
+    window.tCtrl = tCtrl;
 
      function success(res) {
             tCtrl.songList = res.data; 
-	        console.debug("tCtrl.songList: ",tCtrl.songList);
+	        console.debug("tCtrl.songList: ",res.data);
+
+                tCtrl.songList = res.data.message.body.track_list.filter(function(song){
+                
+                    
+                    return song.track.track_spotify_id
+                }).slice(0, 20)
+                
         }
         function error(err) {
             console.error(err);
         }
 
     tCtrl.getLyrics = function(){
-        console.log('Getting lyrics...')
+        console.log('Getting lyrics...');
         console.log("Searching for: " + tCtrl.search);
         var result = mFactory.getSongs(tCtrl.search);
         result.then(success, error);
 
-        // function validator() {
-        //     var searchBox =  
-        //     if (searchBox == null){
-        //         alert("Your search is blank")
-        //     }
-        // } 
     }
 }
 
@@ -67,7 +69,8 @@ function musicFactory($http){
                     q_lyrics: searchTerms,
                     format: 'jsonp',
                     apikey:'b13dc832af59a9d95274b3ac70b17656',
-                    callback: 'JSON_CALLBACK'
+                    callback: 'JSON_CALLBACK',
+                    page_size: 50,
                 }
             });
         }
