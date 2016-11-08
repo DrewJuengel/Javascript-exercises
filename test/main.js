@@ -11,22 +11,23 @@ musicFactory.$inject=['$http'];
 function tController($sce, mFactory){
     var tCtrl = this;
     tCtrl.$sce = $sce;
-   
+
+    window.tCtrl = tCtrl;
+
      function success(res) {
-             tCtrl.songList = res.data; 
+            tCtrl.songList = res.data; 
 	        console.debug("tCtrl.songList: ",res.data);
 
                 tCtrl.songList = res.data.message.body.track_list.filter(function(song){
                 
-            
-                     return song.track.track_spotify_id
-                 }).slice(0, 20)
-               
+                    
+                    return song.track.track_spotify_id
+                }).slice(0, 20)
+                
         }
         function error(err) {
             console.error(err);
         }
- console.log('THIS' + tCtrl.songList)
 
     tCtrl.getLyrics = function(){
         console.log('Getting lyrics...');
@@ -35,13 +36,13 @@ function tController($sce, mFactory){
         result.then(success, error);
 
     }
-    
 }
 
 
 
     // END OF 1ST CONTROLLER
 
+//////////////////////////////////////////////////////////////////////////////////////
 
     // START OF 2ND CONTROLLER
 
@@ -51,6 +52,7 @@ function pController($http){
 
     // END OF 2ND CONTROLLER
 
+//////////////////////////////////////////////////////////////////////////////////////
 
     // START OF FACTORY
 
