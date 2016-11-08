@@ -11,6 +11,7 @@ musicFactory.$inject=['$http'];
 function tController($sce, mFactory){
     var tCtrl = this;
     tCtrl.$sce = $sce;
+    console.log('angular loaded')
 
     // window.tCtrl = tCtrl;
 
@@ -42,7 +43,6 @@ function tController($sce, mFactory){
 
     // END OF 1ST CONTROLLER
 
-//////////////////////////////////////////////////////////////////////////////////////
 
     // START OF 2ND CONTROLLER
 
@@ -52,7 +52,6 @@ function pController($http){
 
     // END OF 2ND CONTROLLER
 
-//////////////////////////////////////////////////////////////////////////////////////
 
     // START OF FACTORY
 
