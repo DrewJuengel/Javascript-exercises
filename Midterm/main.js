@@ -12,7 +12,7 @@ function tController($sce, mFactory){
     var tCtrl = this;
     tCtrl.$sce = $sce;
 
-    window.tCtrl = tCtrl;
+    // window.tCtrl = tCtrl;
 
      function success(res) {
             tCtrl.songList = res.data; 
